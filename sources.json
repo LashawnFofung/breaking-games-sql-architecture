@@ -1,0 +1,62 @@
+{
+  "profiled_on": "2026-11-10",
+  "database": "breaking_games.db",
+  "published": false,
+  "publish_note": "Pending confirmation from Extern",
+  "tables": [
+    {
+      "name": "shopify_sales",
+      "rows": 116,
+      "grain": "one product, all-time summary",
+      "time_window": null,
+      "trust": "high",
+      "key_figures": {"total_sales_usd": 159612, "net_sales_usd": 150883, "units": 6560},
+      "known_issues": ["no date column", "8 products without usable category", "3 products with $0 sales"]
+    },
+    {
+      "name": "shopify_orders",
+      "rows": 277,
+      "grain": "one order line item or one shipping charge",
+      "time_window": {"start": "2026-08-01", "end": "2026-08-31"},
+      "trust": "high, small sample",
+      "key_figures": {"orders": 92, "total_usd": 4058},
+      "known_issues": ["92 shipping rows with blank product title", "1 title not in shopify_sales", "no customer column"]
+    },
+    {
+      "name": "shopify_checkouts",
+      "rows": 1579,
+      "grain": "one line item in an abandoned checkout",
+      "time_window": {"start": "2016-10", "end": "2026-10", "note": "uneven: 523 checkouts in 2025, 272 in 2021, 17-40 most other years"},
+      "trust": "medium",
+      "key_figures": {"checkouts": 1197, "customers": 1171, "cart_value_usd": 94320},
+      "known_issues": ["totals only on first line of each checkout", "91 of 176 product names match shopify_sales", "third-party vendors present", "25 checkouts with refunded amounts"]
+    },
+    {
+      "name": "referrals",
+      "rows": 4450,
+      "grain": "one referrer and landing page pair",
+      "time_window": null,
+      "trust": "medium for volume, medium-low for rates",
+      "key_figures": {"pageviews": 823393, "checkout_sessions": 2726},
+      "known_issues": ["no date column", "previous-year columns empty", "blank referrer on 2,167 rows", "spam referrers", "rates on tiny samples"]
+    },
+    {
+      "name": "meta_campaigns",
+      "rows": 42,
+      "grain": "one campaign, lifetime totals",
+      "time_window": {"start": "2025-01-01", "end": "2026-09-07", "note": "single block, no monthly split"},
+      "trust": "medium",
+      "key_figures": {"spend_usd": 98543, "campaigns_with_spend": 16},
+      "known_issues": ["results counts different units per campaign", "28 campaigns with no result spent $22,126", "shop_clicks always empty"]
+    },
+    {
+      "name": "meta_ad_sets",
+      "rows": 102,
+      "grain": "one ad set, lifetime totals",
+      "time_window": {"start": "2025-01-01", "end": "2026-09-07"},
+      "trust": "medium",
+      "key_figures": {"spend_usd": 98543},
+      "known_issues": ["no campaign column", "11 names repeat across 31 rows"]
+    }
+  ]
+}
