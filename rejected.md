@@ -1,17 +1,32 @@
 # Rejected
 
-What this project deliberately does not do, and why. Saying no with a reason is part of the work.
+What this project deliberately does not do, and why. Each entry also says what would change my mind.
 
-| Request or idea | Why not | What would change my mind |
+## Out of Scope
+
+| Idea | Why not | What would change my mind |
 |---|---|---|
-| Include wholesale and Kickstarter sales | Program scope is Shopify direct-to-consumer only, and none of the six tables covers those channels | A wholesale or Kickstarter export added to the dataset |
-| Customer-level attribution (which ad led to which buyer) | No field links a customer or order to a campaign; any link would be invented | Order-level UTM or campaign IDs |
-| A single ROAS figure (Shopify revenue ÷ Meta spend) | `shopify_sales` has no dates and Meta is one lifetime block, so the two don't cover a common period | Monthly Meta spend plus dated sales |
-| A true cart abandonment rate | Abandoned checkouts span 2016–2026; completed orders cover August 2026 only | Completed orders for the same period as the checkouts |
-| Year-over-year holiday comparison | No dated sales history; the referrals table's previous-year columns are all empty | Dated sales for at least the last holiday season |
-| A demand forecasting model | No time series to train or test on; a forecast would look precise and be guesswork | 12+ months of dated sales |
-| Summing or averaging Meta `results` across campaigns | It mixes purchases, landing page views and reach into one meaningless number | Never; compare within one `result_indicator` |
-| Averaging referral rates row by row | 1,921 rows show a 100% rate on fewer than 5 pageviews; a plain average rewards tiny samples | Never; weight rates by pageviews |
-| Fixing the 25 abandoned checkouts with a refunded amount | Unclear what they mean; "fixing" them would hide a question | Mentor explains them (open question 4 in the data report) |
-| A dashboard tile for every metric I can compute | More tiles means less attention on the three decisions that matter | A stakeholder names a decision a missing tile would inform |
-| Publishing the `.db` file and CSVs | Not yet confirmed with Extern | Written confirmation from Extern |
+| Wholesale and Kickstarter sales | The externship covers Shopify direct-to-consumer only, and none of the six tables includes those channels | A wholesale or Kickstarter export added to the dataset |
+| Customer-level attribution (which ad led to which buyer) | No field links a customer or order to a campaign, so any link would be invented | Order-level UTM or campaign IDs |
+| A demand forecast | No dated sales history to build or test one on; a forecast would look precise and be guesswork | 12 or more months of dated sales |
+| Year-over-year holiday comparison | No dated sales history, and the referrals table's previous-year columns are all empty | Dated sales for at least the last holiday season |
+| Publishing the `.db` file and CSVs | Not yet confirmed with Extern, Inc. | Written confirmation from Extern |
+
+## Done Only With a Stated Assumption
+
+These are in the roadmap, so they get built, but never as a bare number.
+
+| Metric | The limitation | How it's reported |
+|---|---|---|
+| Ad and channel ROI (Project 4) | `shopify_sales` has no dates, and Meta reports one total for Jan 2025 – Sep 2026, so the two don't cover a known common period | Channel-level, with the time assumption printed beside the figure (D-06, D-07) |
+| Abandonment rate (Project 5) | Abandoned checkouts span 2016–2026; completed orders cover August 2026 only | For a matched period, or labelled an estimate with its period stated |
+| Ad-click-to-purchase joins (Project 2) | Nothing links an ad to an order | Built as a channel path: Meta spend → Meta-referred traffic → checkouts (D-07) |
+
+## Never
+
+| Practice | Why |
+|---|---|
+| Summing or averaging Meta `results` across campaigns | It mixes purchases, landing page views, and reach into one meaningless number (D-02) |
+| Averaging referral rates row by row | 1,921 rows show a 100% rate on fewer than 5 pageviews; a plain average rewards tiny samples |
+| "Fixing" the 25 abandoned checkouts that show a refunded amount | Unclear what they mean; changing them would hide a question for the mentor |
+| A dashboard tile for every metric I can compute | Each extra tile pulls attention from the decisions that matter |

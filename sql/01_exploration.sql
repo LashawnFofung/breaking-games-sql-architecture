@@ -1,8 +1,8 @@
--- 00_verification.sql
--- Question:  Did the data load as expected?
+-- 01_exploration.sql — Project 1: first queries and row checks
+-- Question:  Did the data load as expected, and how far can each table be trusted?
 -- Decision:  Whether the database is safe to build on.
--- Window:    All rows, no filtering.
--- Expected results recorded 2026-11-10.
+-- Period:    All rows, no filtering.
+-- Expected results recorded 2026-11-10. Decision IDs refer to docs/design-decisions.md.
 
 -- Row counts (expected: 116, 277, 1579, 4450, 42, 102)
 SELECT 'shopify_sales' AS tbl, COUNT(*) AS n FROM shopify_sales
