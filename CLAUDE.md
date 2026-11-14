@@ -20,6 +20,8 @@ Claude drafts and cross-checks the SQL in this repo; I make the decisions. Read 
 | `shopify_orders` | Exclude `sale_id LIKE '%-S'` from product metrics; keep it for order totals | Shipping rows have a blank product title (D-04) |
 | `shopify_sales` | Use `net_sales` for revenue | `total_sales` includes tax (D-01) |
 | `shopify_sales` | Never claim a period for its figures | No date column (D-06) |
+| `shopify_sales` | Exclude $0 items from unit rankings | Two free gift-wrap items rank 9th and 10th by units (D-05) |
+| `meta_campaigns`, `meta_ad_sets` | Check `spend_usd` before reading a blank `results` as "never ran" | 4 blank campaigns spent $22,126 (D-02) |
 | `meta_campaigns`, `meta_ad_sets` | Filter or group by `result_indicator` before using `results` | `results` counts different things per campaign (D-02) |
 | `meta_campaigns`, `meta_ad_sets` | Treat a blank `results` as not recorded, not zero | D-02 |
 | `meta_ad_sets` | Don't identify an ad set by name alone | 11 names repeat across 31 rows |
