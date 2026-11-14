@@ -6,9 +6,9 @@ Where the work stands and what's next. Rewritten at the end of every work sessio
 
 ## Where It Stands
 
-- **Project 1** is in progress. All six tables are profiled; the data dictionary and data quality report are written; row counts verify.
+- **Project 1** is complete (submitted 2026-11-14). Tables profiled, data dictionary and quality report written, reorder list and five instant answers in `sql/01_exploration.sql`.
 - **Decisions:** 7 proposed, 2 decided, 4 open (see [`design-decisions.md`](design-decisions.md)).
-- **Repo:** PRD at v0.2. The original database is published unchanged in [`../data/`](../data/README.md) with a checksum (D-13).
+- **Repo:** PRD at v0.3. The original database is published unchanged in [`../data/`](../data/README.md) with a checksum (D-13).
 
 ## Waiting On
 
@@ -21,13 +21,15 @@ Where the work stands and what's next. Rewritten at the end of every work sessio
 
 ## Next Session
 
-1. Confirm or change the proposed decisions (D-01, D-02, D-03, D-04, D-06, D-07, D-10).
-2. Run the Project 1 checks in [`submission-gate.md`](submission-gate.md) and submit.
-3. Start Project 2 with D-03 (product key) and D-08 (channel mapping).
-
+1. Ask the mentor the four Waiting On questions, starting with the period `shopify_sales` covers.
+2. Confirm or change the proposed decisions (D-01, D-02, D-04, D-06, D-07, D-10).
+3. Start Project 2 with D-03 (product key) and D-08 (channel mapping), and make the D-10 category fix permanent in the Project 2 SQL.
+   
 ## Watch Out For
 
 - Count checkouts with `COUNT(DISTINCT name)`, not rows.
+- Exclude $0 items from unit rankings (gift-wrap items).
+- A blank Meta result isn't always a campaign that never ran; check spend.
 - Never add up Meta `results` across result types.
 - State the period beside every figure.
 - Never edit `data/breaking_games.db`. Work on a copy.
