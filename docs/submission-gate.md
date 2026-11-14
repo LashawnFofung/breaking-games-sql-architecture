@@ -31,7 +31,7 @@ The go/no-go check before submitting each project. Nothing is submitted until ev
 
 | Project | Date | Go / No-go | Notes |
 |---|---|---|---|
-| 1 | | | |
+| 1 | 2026-11-14 | Go | Row counts match; sanity checks Q3 = 116, Q4 = 98,542.56, Q5 = 1,197; queries in `sql/01_exploration.sql`; database checksum unchanged |
 | 2 | | | |
 | 3 | | | |
 | 4 | | | |
