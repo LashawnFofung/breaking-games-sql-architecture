@@ -13,11 +13,10 @@ What each project taught me, and the rule it adds. A lesson only counts once it 
 
 ## Project 1 — Load and Explore the Raw Data
 
-- **What went well:** Asking which decision the data drives before running any query.
-- **What went wrong:**
-- **Rule it adds:** Count checkouts with `COUNT(DISTINCT name)` (added to `CLAUDE.md` 2026-11-10, after 1,579 rows turned out to be 1,197 checkouts).
-- **Do differently next time:**
-
+- **What went well:** Asking which decision the data drives before running any query. No blockers: the course documents were accessible and SQLite and DB Browser set up without problems.
+- **What went wrong:** Nothing blocked the work. Near misses instead: two course queries would have reached Mike misleading as written. The units top 10 includes two $0 gift-wrap items, and the "average results per campaign" mixes reach with purchases.
+- **Rule it adds:** Count checkouts with `COUNT(DISTINCT name)` (added to `CLAUDE.md` 2026-11-10, after 1,579 rows turned out to be 1,197 checkouts). Exclude $0 items from unit rankings, and check spend before reading a blank Meta result as "never ran" (both added to `CLAUDE.md` 2026-11-14).
+- **Do differently next time:** Ask the mentor what period `shopify_sales` covers in the first live session. It's still open and blocks any "this season" claim in Project 3.
 ## Project 2 — Design a Connected Database
 
 - **What went well:**
