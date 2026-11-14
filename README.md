@@ -6,7 +6,7 @@ SQL and database architecture project for **[Breaking Games](https://breakinggam
 
 ## About Breaking Games
 
-Breaking Games is an indie tabletop game publisher in Netcong, New Jersey, and the publishing arm of Ad Magic, Inc. It sells everything from $10 party games like POOP and Sparkle*Kitty to $99+ strategy boxes like Dwellings of Eldervale. Ad Magic also manufactures and fulfills games for other publishers, including Cards Against Humanity.
+Breaking Games is an indie tabletop game publisher in Netcong, New Jersey, and the publishing arm of Ad Magic, Inc. It sells everything from $10 party games like POOP to $100 strategy boxes like Dwellings of Eldervale. Ad Magic also manufactures and fulfills games for other publishers, including Cards Against Humanity.
 
 ## The Problem
 
@@ -162,7 +162,7 @@ breaking-games-sql-architecture/
 
 ## Progress
 
-- [ ] Project 1: Load and explore the raw data
+- [x] Project 1: Load and explore the raw data
 - [ ] Project 2: Design a connected database
 - [ ] Project 3: Product revenue analysis
 - [ ] Project 4: Marketing attribution
