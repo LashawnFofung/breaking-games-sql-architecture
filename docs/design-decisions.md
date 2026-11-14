@@ -56,7 +56,7 @@ Keys, cleaning, and modeling rationale for the Breaking Games database. Each ent
 
 ### D-04 · Shipping Rows in Orders
 
-- **Context:** Cheap add-ons rank high on units but low on revenue. Project 1 evidence: two free gift-wrap items (Holiday Insert 2025 Gift Tag, Holiday Bow 2025) rank 9th and 10th by units with $0 sales, and the Oracle Hex Tile is #2 by units but outside the revenue top 10.
+- **Context:** Each of the 92 August orders has one shipping row (`sale_id` ending in `-S`, blank product title).
 - **Options:** (a) keep everywhere (b) delete (c) leave out of product metrics, keep in order totals
 - **Pick:** (c)
 - **Trade-off:** Two filters to remember, but both product counts and order totals stay correct.
@@ -64,7 +64,7 @@ Keys, cleaning, and modeling rationale for the Breaking Games database. Each ent
 
 ### D-05 · "Top Seller" Definition
 
-- **Context:** Cheap add-ons rank high on units but low on revenue.
+- **Context:** Cheap add-ons rank high on units but low on revenue. Project 1 evidence: two free gift-wrap items (Holiday Insert 2025 Gift Tag, Holiday Bow 2025) rank 9th and 10th by units with $0 sales, and the Oracle Hex Tile is #2 by units but outside the revenue top 10.
 - **Options:** (a) units (b) net revenue (c) show both, rank on revenue
 - **Leaning:** (c). Print quantity is about units, but print priority is about money.
 - **Decide with:** Mike's actual question. Is it "what do we print the most of" or "what matters most to the business"?
