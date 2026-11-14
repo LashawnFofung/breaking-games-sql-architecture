@@ -99,5 +99,6 @@ Versions stay at 0.x while drafting and reach 1.0 with the final recommendation.
 
 | Version | Date | What changed | Why |
 |---|---|---|---|
+| 0.3 | 2026-11-14 | Project 1 complete: first success metric met; Key Assumptions restated on net sales with two new findings; two risks added | Evidence from the five instant answers and cleaning lab (D-01, D-02, D-05) |
 | 0.2 | 2026-11-14 | Original database added to `data/`; publishing question resolved | D-13 |
 | 0.1 | 2026-11-10 | First draft after Project 1 profiling | — |
