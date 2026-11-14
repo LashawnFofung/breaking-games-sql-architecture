@@ -21,7 +21,7 @@ erDiagram
     }
     shopify_checkouts {
         text name
-        text customer_id
+        int customer_id
         text lineitem_name
         real total
         text created_at
