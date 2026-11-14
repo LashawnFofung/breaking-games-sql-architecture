@@ -49,7 +49,7 @@ What's wrong in each table, what I did about it, and what Breaking Games should 
 
 - **Handled:** `results` only compared within the same `result_indicator`; blanks treated as not recorded (D-02).
 - **Verified:** spend ($98,543) and impressions match exactly between the two tables.
-- **Flagged:** 28 campaigns with no recorded result spent $22,126.
+- **Flagged:** 28 campaigns have no recorded result; 24 spent nothing, but 4 spent $22,126.
 - **Not usable:** `shop_clicks` is always empty.
 
 ## Questions for the Mentor
