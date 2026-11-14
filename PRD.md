@@ -46,6 +46,7 @@ Candidate questions are scored on **business impact** (does the answer change a 
 
 | Metric | Baseline | Target | How I'll check |
 |---|---|---|---|
+| Time to answer Mike's five Monday questions | About 2 hours a week (Jess, spreadsheets) | Under 1 minute | ✅ Met in Project 1: five queries in `sql/01_exploration.sql` |
 | Dashboard tiles that name the decision they inform and an action threshold | 0 | 100% | Review against [`docs/dashboard-decision-spec.md`](docs/dashboard-decision-spec.md) |
 | Order lines that join to a product | 50 of 51 titles match exactly today | 100% | Unmatched-row count after the product mapping (D-03) |
 | Metrics with a formula and a stated period | Not yet built | 100% | No blank "Period" cell in [`docs/metric-definitions.md`](docs/metric-definitions.md) |
@@ -62,12 +63,14 @@ Candidate questions are scored on **business impact** (does the answer change a 
 
 ## Key Assumptions
 
-| Assumption | Evidence (profiled 2026-11-10) | What would break it |
+| Assumption | Evidence (Project 1) | What would break it |
 |---|---|---|
 | `shopify_sales` is reliable for ranking | Totals reconcile on all 116 rows | Learning it covers an unusual period |
-| Revenue is concentrated in a few titles | The top 23 products (20% of the catalog) bring in 79.5% of total sales | A different revenue measure changing the ranking |
+| Revenue is concentrated in a few titles | The top 23 products (20% of the catalog) bring in 79.6% of net sales | A different revenue measure changing the ranking |
 | Google drives more checkouts than Facebook | About 210K pageviews each; 1,044 vs 408 checkout sessions | The referrals period being unrepresentative |
 | Meta purchase campaigns cost about $63 per purchase | $51,257 spend ÷ 813 Meta-reported purchases | Meta's purchase count not matching Shopify |
+| The revenue ranking doesn't depend on the revenue measure | Ranking by `net_sales` instead of `total_sales` gives the same top 10 in the same order | A product with unusually high tax or discounts near the cutoff |
+| A units ranking is not a reorder list | Two free gift-wrap items rank 9th and 10th by units with $0 sales; the Oracle Hex Tile is #2 by units but outside the revenue top 10 | — (this is why the print list uses revenue, D-05) |
 
 ## Open Questions
 
