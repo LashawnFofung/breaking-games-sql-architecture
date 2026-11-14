@@ -5,7 +5,7 @@ Every number on the dashboard is defined here before it's calculated. A metric w
 | Metric | Formula | Source | Period | Used for | Caveat |
 |---|---|---|---|---|---|
 | Product net revenue | `SUM(net_sales)` by product | `shopify_sales` | Unknown (open question 1) | Mike: print priority | Excludes tax (D-01) |
-| Revenue share of top 20% of products | Net revenue of the top 20% ÷ total net revenue | `shopify_sales` | Unknown | Mike: print priority | The first pass used total sales (79.5%); recompute on net sales |
+| Revenue share of top 20% of products | Net revenue of the top 20% ÷ total net revenue | `shopify_sales` | Unknown | Mike: print priority | 79.6% on net sales (79.5% on total sales); 23 of 116 products|
 | Units sold | `SUM(net_items_sold)` by product | `shopify_sales` | Unknown | Mike: print quantity | Cheap add-ons rank high (D-05) |
 | Average order value | Order total ÷ number of orders | `shopify_orders` | Aug 2026 | Mike: pricing context | One month only; includes shipping |
 | Checkout sessions by channel | `SUM(checkout_sessions)` grouped by channel | `referrals` | Unknown | Jess: channel budget | Depends on the channel mapping (D-08) |
