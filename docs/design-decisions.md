@@ -32,15 +32,17 @@ Keys, cleaning, and modeling rationale for the Breaking Games database. Each ent
 - **Trade-off:** A lower headline number, but tax isn't money the business keeps. Option (a) would overstate revenue by about $8,700.
 - **Reversible?** Yes, one column swap.
 - **Reopen if:** Breaking Games' own reporting uses gross or total sales.
+- **Check (Project 1):** ranking by `net_sales` gives the same top 10 in the same order as `total_sales`, so the choice doesn't change Mike's reorder list.
 
 ### D-02 · Meta `results`: Blank vs Zero, and Mixed Result Types
 
-- **Context:** `results` counts different things per campaign: purchases, landing page views, or reach. 28 campaigns have no result recorded but spent $22,126. Treating blanks as zero moves the average from about 107K to about 36K.
+- **Context:** `results` counts different things per campaign: purchases, landing page views, or reach. 28 campaigns have no result recorded; 24 of them spent nothing, but 4 spent $22,126, so a blank doesn't always mean the campaign never ran. Treating blanks as zero moves the average from about 107K to about 36K.
 - **Options:** (a) treat blanks as zero (b) treat blanks as "not recorded," leave them out of averages, and only compare campaigns with the same `result_indicator`
 - **Pick:** (b)
 - **Trade-off:** Fewer campaigns in each comparison, but every comparison is like for like.
 - **Reversible?** Yes.
 - **Reopen if:** Meta documentation or the mentor confirms blank means zero.
+- **Check (Project 1):** confirmed in the cleaning lab. `AVG(results)` = 106,991 and `AVG(COALESCE(results, 0))` = 35,664, and both mix reach (1.4M from 3 campaigns) with 813 purchases, so neither is a usable metric.
 
 ### D-03 · Product Key
 
@@ -54,7 +56,7 @@ Keys, cleaning, and modeling rationale for the Breaking Games database. Each ent
 
 ### D-04 · Shipping Rows in Orders
 
-- **Context:** Each of the 92 August orders has one shipping row (`sale_id` ending in `-S`, blank product title).
+- **Context:** Cheap add-ons rank high on units but low on revenue. Project 1 evidence: two free gift-wrap items (Holiday Insert 2025 Gift Tag, Holiday Bow 2025) rank 9th and 10th by units with $0 sales, and the Oracle Hex Tile is #2 by units but outside the revenue top 10.
 - **Options:** (a) keep everywhere (b) delete (c) leave out of product metrics, keep in order totals
 - **Pick:** (c)
 - **Trade-off:** Two filters to remember, but both product counts and order totals stay correct.
