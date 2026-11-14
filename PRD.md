@@ -1,6 +1,6 @@
 # PRD — Breaking Games Q4 Decision Database
 
-**Owner:** Lashawn Fofung · **Version:** 0.2 · **Status:** Draft, Project 1 in progress · **Last rewritten:** 2026-11-14
+**Owner:** Lashawn Fofung ·**Version:** 0.3 · **Status:** Draft, Project 1 complete · **Last rewritten:** 2026-11-14
 
 > This is the one living proposal for the project. When something changes, I rewrite the affected section, add one line to [Version History](#version-history), and log the reasoning in [`docs/design-decisions.md`](docs/design-decisions.md). I don't append updates to the sections themselves.
 
