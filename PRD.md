@@ -1,6 +1,6 @@
 # PRD — Breaking Games Q4 Decision Database
 
-**Owner:** Lashawn Fofung ·**Version:** 0.3 · **Status:** Draft, Project 1 complete · **Last rewritten:** 2026-11-14
+**Owner:** Lashawn Fofung · **Version:** 0.3 · **Status:** Draft, Project 1 complete · **Last rewritten:** 2026-11-14
 
 > This is the one living proposal for the project. When something changes, I rewrite the affected section, add one line to [Version History](#version-history), and log the reasoning in [`docs/design-decisions.md`](docs/design-decisions.md). I don't append updates to the sections themselves.
 
@@ -88,6 +88,8 @@ Candidate questions are scored on **business impact** (does the answer change a 
 | A ranking on an unknown period misleads the print decision | Medium | State the period on every tile; resolve open question 1 |
 | Meta `results` summed across result types inflates performance | High if unguarded | Rule in [`CLAUDE.md`](CLAUDE.md); always group by `result_indicator` |
 | Bot carts inflate abandoned-cart value | Medium | Apply the bot rule (D-09) before any cart metric |
+| A units-based "top seller" list puts free or cheap add-ons in front of Mike | High if unguarded | Rank by revenue; exclude $0 items from unit rankings (D-05) |
+| Blank Meta results are read as "never ran" | Medium | 4 blank campaigns spent $22,126; check spend before treating a blank as inactive (D-02) |
 
 ## Recommendation
 
