@@ -17,8 +17,8 @@ What's wrong in each table, what I did about it, and what Breaking Games should 
 
 ### `shopify_sales`
 
-- **Fixed:** lowercase `game` merged into `Game` (D-10).
-- **Labelled, not guessed:** 7 blank categories become "Uncategorized."
+- **To fix:** merge lowercase `game` into `Game` (D-10, proposed; previewed in Project 1, made permanent in the Project 2 SQL).
+- **To label, not guess:** 7 blank categories become "Uncategorized" (D-10).
 - **Flagged:** 3 products with $0 sales, including two holiday gift-wrap items.
 - **Verified:** `net_sales` and `total_sales` reconcile on all 116 rows.
 
