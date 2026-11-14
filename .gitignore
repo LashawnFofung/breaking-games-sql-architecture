@@ -1,0 +1,8 @@
+# Mac system files
+.DS_Store
+
+# Source data: keep the database and CSVs out of Git
+*.db
+*.sqlite
+*.csv
+data/
