@@ -10,7 +10,7 @@ What this project deliberately does not do, and why. Each entry also says what w
 | Customer-level attribution (which ad led to which buyer) | No field links a customer or order to a campaign, so any link would be invented | Order-level UTM or campaign IDs |
 | A demand forecast | No dated sales history to build or test one on; a forecast would look precise and be guesswork | 12 or more months of dated sales |
 | Year-over-year holiday comparison | No dated sales history, and the referrals table's previous-year columns are all empty | Dated sales for at least the last holiday season |
-| Publishing the `.db` file and CSVs | Not yet confirmed with Extern, Inc. | Written confirmation from Extern |
+| Publishing a cleaned copy of the database | Cleaning edits would be hidden inside the file. The original is published unchanged and all cleaning lives in SQL scripts (D-13) | Never; cleaning stays in scripts |
 
 ## Done Only With a Stated Assumption
 

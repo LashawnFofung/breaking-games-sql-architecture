@@ -27,6 +27,7 @@ Claude drafts and cross-checks the SQL in this repo; I make the decisions. Read 
 | `referrals` | Group referrers through the channel table, not ad hoc `LIKE` filters | D-08 |
 | Any product join | Join through the product table's `product_id`, not raw titles | D-03 |
 | Any figure combining tables | State the time assumption beside the number | D-06; see [`rejected.md`](rejected.md) |
+| `data/breaking_games.db` | Never write to it. Run anything that changes data against a copy, or create views | Published unchanged so results can be reproduced (D-13) |
 
 ## Output Conventions
 

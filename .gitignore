@@ -1,8 +1,9 @@
 # Mac system files
 .DS_Store
 
-# Source data: keep the database and CSVs out of Git
+# The original database is published on purpose (D-13).
+# Block any other database or export so working copies don't slip in.
 *.db
 *.sqlite
 *.csv
-data/
+!data/breaking_games.db

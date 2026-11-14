@@ -1,6 +1,6 @@
 # PRD — Breaking Games Q4 Decision Database
 
-**Owner:** Lashawn Fofung · **Version:** 0.1 · **Status:** Draft, Project 1 in progress · **Last rewritten:** 2026-11-10
+**Owner:** Lashawn Fofung · **Version:** 0.2 · **Status:** Draft, Project 1 in progress · **Last rewritten:** 2026-11-14
 
 > This is the one living proposal for the project. When something changes, I rewrite the affected section, add one line to [Version History](#version-history), and log the reasoning in [`docs/design-decisions.md`](docs/design-decisions.md). I don't append updates to the sections themselves.
 
@@ -56,7 +56,7 @@ Candidate questions are scored on **business impact** (does the answer change a 
 ## Proposed Solution
 
 1. **A connected SQLite database:** cleaned source tables, a product table with a stable product ID and a title-mapping table, and a channel table that groups the 469 referrers into a handful of channels.
-2. **Documented queries,** one file per project in `sql/`, each opening with the question it answers and the period it covers.
+2. **Documented queries,** one file per project in `sql/`, each opening with the question it answers and the period it covers. They run against the original database in [`data/`](data/README.md), which is published unchanged so every result can be reproduced (D-13).
 3. **An HTML dashboard** with few tiles, each tied to a decision and a threshold, plus a "What this doesn't show" note.
 4. **A one-page recommendation** for leadership: three findings, one recommendation, one risk.
 
@@ -75,7 +75,8 @@ Candidate questions are scored on **business impact** (does the answer change a 
 2. What period does `referrals` cover?
 3. Are Blackbox and Secret Hitler products in scope?
 4. Should a blank `referrer` count as Direct?
-5. Can the `.db` file and CSVs be published?
+
+*Resolved:* whether the database can be published. Yes: it holds no real customer data (D-13).
 
 ## Risks
 
@@ -95,4 +96,5 @@ Versions stay at 0.x while drafting and reach 1.0 with the final recommendation.
 
 | Version | Date | What changed | Why |
 |---|---|---|---|
+| 0.2 | 2026-11-14 | Original database added to `data/`; publishing question resolved | D-13 |
 | 0.1 | 2026-11-10 | First draft after Project 1 profiling | — |

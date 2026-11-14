@@ -14,7 +14,7 @@ The go/no-go check before submitting each project. Nothing is submitted until ev
 | Anything left out is in [`../rejected.md`](../rejected.md) | Entry |
 | [`../WALKTHROUGH.md`](../WALKTHROUGH.md) section is filled in | Section |
 | [`../PRD.md`](../PRD.md) is rewritten if anything in it changed | Section |
-| No `.db` or `.csv` file is staged in Git | GitHub Desktop changes list |
+| `data/breaking_games.db` is unchanged, and no other `.db` or `.csv` file is staged in Git | Checksum matches [`../data/README.md`](../data/README.md); GitHub Desktop changes list |
 
 ## Project-Specific Checks
 

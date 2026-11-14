@@ -42,6 +42,8 @@ Claude drafts and cross-checks the SQL. I decide what question to answer, what t
 
 All data comes from Shopify and Meta Ads Manager and is anonymized (customer names and emails are placeholders). Wholesale and Kickstarter sales are out of scope.
 
+The original database is included, unchanged, in [`data/`](data/README.md), with a checksum and a privacy note, so every query can be re-run from the same starting point (D-13).
+
 | Table | Source | Rows | What it holds | Date range |
 |---|---|---:|---|---|
 | `shopify_sales` | Shopify | 116 | Revenue, units, discounts, and returns per product | Summary |
@@ -124,6 +126,9 @@ breaking-games-sql-architecture/
 │   ├── 03_product_revenue.sql      # Project 3
 │   ├── 04_marketing.sql            # Project 4
 │   └── 05_abandoned_carts.sql      # Project 5
+├── data/
+│   ├── breaking_games.db           # Original database, unchanged (D-13)
+│   └── README.md                   # Checksum, contents, and privacy note
 ├── dashboard/
 │   └── dashboard.html              # Project 6
 ├── beyond-the-externship/          # SQLite vs MongoDB architecture comparison
@@ -143,7 +148,7 @@ breaking-games-sql-architecture/
    ```bash
    git clone https://github.com/LashawnFofung/breaking-games-sql-architecture.git
    ```
-3. Open `breaking_games.db` in DB Browser. *(The database is provided by Extern, Inc. and may not be included in this repository.)*
+3. Make a working copy of `data/breaking_games.db` (for example, `breaking_games_work.db`) and open the copy in DB Browser. The original stays unchanged; see [`data/README.md`](data/README.md).
 4. Verify the row counts:
    ```sql
    SELECT COUNT(*) FROM shopify_sales;      -- 116

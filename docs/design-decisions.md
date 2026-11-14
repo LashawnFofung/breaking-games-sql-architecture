@@ -20,6 +20,7 @@ Keys, cleaning, and modeling rationale for the Breaking Games database. Each ent
 | D-10 | Blank and lowercase categories | 1 | Proposed | 2026-11-10 |
 | D-11 | Third-party vendors in checkouts | 5 | Open | 2026-11-10 |
 | D-12 | Counting checkouts | 1, 5 | Decided | 2026-11-10 |
+| D-13 | Publishing the original database | All | Decided | 2026-11-11 |
 
 ---
 
@@ -110,6 +111,16 @@ Keys, cleaning, and modeling rationale for the Breaking Games database. Each ent
 - **Context:** A checkout with several products spans several rows, and only the first row carries the totals. 1,579 rows = 1,197 checkouts.
 - **Decided:** always count with `COUNT(DISTINCT name)` and take money fields only from the row that carries them.
 - **Why it's decided, not proposed:** it follows from how Shopify structures the export, not from a judgment call.
+
+### D-13 · Publishing the Original Database
+
+- **Context:** Reviewers can't check a query's result without the data it ran on. Confirmed on Nov 11, 2026 that the database holds no real customer data and can be used in a portfolio and published on GitHub.
+- **Options:** (a) keep the database out of the repo (b) publish a cleaned copy (c) publish the original unchanged, and do all cleaning in SQL scripts
+- **Pick:** (c), at `data/breaking_games.db` with a SHA-256 checksum and a privacy note in [`../data/README.md`](../data/README.md)
+- **Trade-off:** About 0.8 MB added to the repo, and the messy data is visible to anyone. In return, every number can be reproduced from the same starting point, and every cleaning step is a visible, reviewable script instead of a hidden edit.
+- **Reversible?** Yes. Remove the file and its history if asked.
+- **Reopen if:** Extern or Breaking Games asks for the data to be taken down, or the file's checksum ever changes.
+- **Check:** `shasum -a 256 data/breaking_games.db` matches the checksum in `data/README.md`.
 
 ---
 
